@@ -72,6 +72,8 @@ endif()
 # Edit files to build here.
 set(SRCS 
   src/main.cpp
+  ../quadricErrorMetrics/src/QEM.cpp
+  
   # src/trivial-connections.cpp
   # ../vector-field-decomposition/src/tree-cotree.cpp
   # ../vector-field-decomposition/src/harmonic-bases.cpp
@@ -102,8 +104,8 @@ target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../utils/
 target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../deps/polyscope/deps/args")
 target_link_libraries(main geometry-central polyscope)
 
-add_executable(test-connect "${TEST_SRCS}")
-target_include_directories(test-connect PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
-target_include_directories(test-connect PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../quadricErrorMetrics/include/")
-target_include_directories(test-connect PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../utils/include")
-target_link_libraries(test-connect geometry-central polyscope gtest)
+add_executable(test-qem "${TEST_SRCS}")
+target_include_directories(test-qem PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
+target_include_directories(test-qem PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../quadricErrorMetrics/include/")
+target_include_directories(test-qem PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../utils/include")
+target_link_libraries(test-qem geometry-central polyscope gtest)
